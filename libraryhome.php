@@ -40,7 +40,34 @@ Pao Teng Thao, Xiong Yang -->
 		  <h4>Recycle books by borrowing and returning them, as often as you'd like.</h4>
 		  
 		</div>
+
+		
 </div>
+<br></br>
+    <!--Insert Body of Page-->
+      <div class = "container">
+		<div class= "leftContainer">
+			<h2>Refer a Friend Today!</h2>
+			<br></br>
+			<p> MetroState Library is your place for books. It is no secret that books can be an expensive purchase to place onto students, who likely will not be keeping the books long term.</p>
+			<br></br>
+			<h4>The library promises to alleviate this burden by providing individuals with the ability to rent the books for a short period of time.However the cost of inventory maintenance puts added stress on the library.</h4>
+			<p>Individuals can choose their desired books, the library will stock and maintain inventory, and individuals can choose which option (rent/buy) that best fits their needs. </p>
+
+			<br></br>
+			<p> Create An account below </p>
+			<br></br>
+			<form method="POST" action="createaccount.php">
+				<input type="submit" value="Create Account" />
+			</form>
+		</div>
+	
+	
+		<div class= "rightContainer">
+			 <img src="librarybooks.jpg" alt="books" width="500px" />
+		</div>
+	</div>
+	<br></br>
         </body>
 	<footer class = "signin_footer">
 		<h1>Join Today</h1> <br>
