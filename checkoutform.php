@@ -9,6 +9,9 @@ Pao Teng Thao, Xiong Yang -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Contact Us</title>
   </head>
 
@@ -25,15 +28,17 @@ Pao Teng Thao, Xiong Yang -->
   </div>
     <div class="contact_container">
       <form action= "checkoutsubmit.php" method="POST">
-      <label for="bookid">Book ID/ISBN:</label>
+      <label for="bookid">bookid:</label>
       <input id="bookid" name="bookid" rows="1" cols="50"> </input>
       <br/>
+      <!--
       <label for="bookname">book name:</label>
       <input id="bookname" name="bookname" rows="1" cols="50"> </input>
+      -->
 
 
 <br>
-<input type="submit" value="Submit" ">
+<input type="submit" value="Submit" class="btn btn-primary">
 <br>
 <br>
       </form>

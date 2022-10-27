@@ -13,9 +13,8 @@ Pao Teng Thao, Xiong Yang -->
   </head>
 
   <!--script for header-->
-  <script
-    language="javascript" type="text/javascript" src="LibraryHeader.txt" ></script>
-
+  <script language="javascript" type="text/javascript" src="LibraryHeader.txt" ></script>
+  
 
 <br></br>
 <body>
@@ -28,11 +27,12 @@ Pao Teng Thao, Xiong Yang -->
       <p><label for="bookname">Search for:</label></p>
         <input id="bookname" name="bookname" rows="1" cols="50"> </input>
 <br>
-<input type="submit" value="Submit" ">
+<input type="submit"  value="Submit">
 <br>
 <br>
       </form>
     </div>
+   
   </body>
   <!--script for footer-->
   <script

@@ -3,6 +3,8 @@
 // User input Variables
 $bookname = $_REQUEST['bookname'];
 $bookid = $_REQUEST['bookid'];
+$isbn = $_REQUEST['isbn'];
+setcookie("bookid", $bookid);
 
 $document_root = $_SERVER['DOCUMENT_ROOT'];
 ?>
@@ -14,12 +16,13 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <link rel="stylesheet" href="css/styles.css" />
     <!--Insert Page Name-->
         <title>Contact Us</title>
 </head>
 
-<body>
+<body onload = "checkoutBook()">
     <!--script for header-->
     <script language="javascript" type="text/javascript" src="LibraryHeader.txt"></script>
     <!--Insert Page Heading-->
@@ -34,11 +37,13 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
         
        <?php
 
-echo 'You have checked out book:' . $_POST['bookname'] .' - id: ' . $_POST['bookid'] .'<br />';
+echo 'You have checked out book:' . $_POST['isbn'] .' - id: ' . $_POST['isbn'] .'<br />';
 echo 'Please go to the counter to pickup your book.';
 
 
 ?> 
+
+<p id="checkoutmsg"></p>
 	
 	<?php
 

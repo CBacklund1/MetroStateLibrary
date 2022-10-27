@@ -3,6 +3,8 @@
 // User input Variables
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
+setcookie("user", $username);
+setcookie("password", $password);
 
 $document_root = $_SERVER['DOCUMENT_ROOT'];
 ?>
@@ -15,11 +17,12 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <!--Insert Page Name-->
         <title>Contact Us</title>
 </head>
 
-<body>
+<body onload = 'validateUser()'>
     <!--script for header-->
     <script language="javascript" type="text/javascript" src="LibraryHeader.txt"></script>
     <!--Insert Page Heading-->
@@ -37,7 +40,11 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
 echo 'You are logged in and welcome ' . $_POST['username'] .'<br />';
 echo ' <br />';
 
+
+
 ?> 
+
+    <p id="welcomemsg"></p>
 	
 	<?php
 

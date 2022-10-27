@@ -26,10 +26,10 @@ Pao Teng Thao, Xiong Yang -->
     <div class="contact_container">
       <form action= "loginsubmit.php" method="POST">
       <p><label for="username">Username:</label></p>
-<textarea id="username" name="username" rows="1" cols="50"> </textarea>
+<input id="username" name="username" rows="1" cols="50"> </input>
 
 <p><label for="password">Password:</label></p>
-<textarea id="password" name="password" rows="1" cols="50"> </textarea>
+<input id="password" name="password" rows="1" cols="50"> </input>
 
 
 <br>
