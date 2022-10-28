@@ -130,3 +130,55 @@ function checkoutBook() {
         };
 
   }
+
+  function validateUserInput(){
+    text = document.getElementById("username").value;
+    
+    if(text == ""){
+      console.log("username required");
+      document.getElementById("usernameError").style = "display:inline";
+    }
+    else{
+        console.log("username entered");
+        document.getElementById("usernameError").style = "display:none";
+    }
+  }
+
+  function validatePasswordInput(){
+    text = document.getElementById("password").value;
+    
+    if(text == ""){
+      console.log("password required");
+      document.getElementById("passwordError").style = "display:inline";
+    }
+    else{
+        console.log("password entered");
+        document.getElementById("passwordError").style = "display:none";
+    }
+  }
+
+  function validateBookIdInput(){
+    text = document.getElementById("bookid").value;
+    
+    if(text == ""){
+      console.log("bookid required");
+      document.getElementById("bookIdError").style = "display:inline";
+    }
+    else{
+        console.log("bookid entered");
+        document.getElementById("bookIdError").style = "display:none";
+    }
+  }
+
+  function validateSearchInput(){
+    text = document.getElementById("bookname").value;
+    
+    if(text == ""){
+      console.log("bookname required");
+      document.getElementById("bookNameError").style = "display:inline";
+    }
+    else{
+        console.log("bookname entered");
+        document.getElementById("bookNameError").style = "display:none";
+    }
+  }

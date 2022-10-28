@@ -12,7 +12,11 @@ Pao Teng Thao, Xiong Yang -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <title>Contact Us</title>
+    <style>
+    .error {color: #FF0000;}
+    </style>
   </head>
 
   <!--script for header-->
@@ -29,7 +33,8 @@ Pao Teng Thao, Xiong Yang -->
     <div class="contact_container">
       <form action= "checkoutsubmit.php" method="POST">
       <label for="bookid">bookid:</label>
-      <input id="bookid" name="bookid" rows="1" cols="50"> </input>
+      <input id="bookid" name="bookid" rows="1" cols="50" oninput= 'validateBookIdInput()'> </input>
+      <span class="error" id = "bookIdError">*Book id is required </span>
       <br/>
       <!--
       <label for="bookname">book name:</label>

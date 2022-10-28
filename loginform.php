@@ -8,8 +8,12 @@ Pao Teng Thao, Xiong Yang -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <link rel="stylesheet" href="styles.css" />
     <title>Contact Us</title>
+    <style>
+    .error {color: #FF0000;}
+    </style>
   </head>
 
   <!--script for header-->
@@ -18,6 +22,10 @@ Pao Teng Thao, Xiong Yang -->
 
 
 <br></br>
+<?php
+  $nameErr = "Username is required";
+  $passErr = "Password is required";
+?>
 <body>
     <!--Insert Page Heading-->
     <div class="heading">
@@ -26,10 +34,12 @@ Pao Teng Thao, Xiong Yang -->
     <div class="contact_container">
       <form action= "loginsubmit.php" method="POST">
       <p><label for="username">Username:</label></p>
-<input id="username" name="username" rows="1" cols="50"> </input>
+<input id="username" name="username" rows="1" cols="50" oninput= 'validateUserInput()'> </input>
+<span class="error" id = "usernameError">*Username is required </span>
 
 <p><label for="password">Password:</label></p>
-<input id="password" name="password" rows="1" cols="50"> </input>
+<input id="password" name="password" rows="1" cols="50" oninput= 'validatePasswordInput()'> </input>
+<span class="error" id = "passwordError">*Password is required </span>
 
 
 <br>

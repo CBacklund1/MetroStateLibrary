@@ -3,8 +3,11 @@
 // User input Variables
 $bookname = $_REQUEST['bookname'];
 $bookid = $_REQUEST['bookid'];
+
 $isbn = $_REQUEST['isbn'];
 setcookie("bookid", $bookid);
+
+
 
 $document_root = $_SERVER['DOCUMENT_ROOT'];
 ?>

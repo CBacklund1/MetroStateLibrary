@@ -9,7 +9,11 @@ Pao Teng Thao, Xiong Yang -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <title>Contact Us</title>
+    <style>
+    .error {color: #FF0000;}
+    </style>
   </head>
 
   <!--script for header-->
@@ -25,7 +29,8 @@ Pao Teng Thao, Xiong Yang -->
     <div class="contact_container">
       <form action= "searchsubmit.php" method="POST">
       <p><label for="bookname">Search for:</label></p>
-        <input id="bookname" name="bookname" rows="1" cols="50"> </input>
+        <input id="bookname" name="bookname" rows="1" cols="50" oninput= 'validateSearchInput()'> </input>
+      <span class="error" id = "bookNameError">*Book name is required </span>
 <br>
 <input type="submit"  value="Submit">
 <br>
