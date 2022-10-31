@@ -30,7 +30,7 @@ Pao Teng Thao, Xiong Yang -->
         <label for="email">Email:</label><br />
         <input type="text" name="email" placeholder="Email" /> <br />
         <label for="question">Ask Your Question:</label><br />
-        <textarea name="question" rows="5" cols="25"> </textarea><br /><br />
+        <textarea name="question" rows="5" cols="28"> </textarea><br /><br />
         <input type="submit" value="Submit" />
       </form>
     </div>
