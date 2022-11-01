@@ -92,7 +92,7 @@ Pao Teng Thao, Xiong Yang -->
   <footer class = "signin_footer">
 		<h1></h1> <br>
 		<h4>Questions or any last reservations? Reach out to our Library Coordinator.</h4><br><br>
-		<form method="POST" action="contactform.html">
+		<form method="POST" action="contactform.php">
 			<input type = "submit" value = "Contact Us"/>
 		</form>
   </footer>
