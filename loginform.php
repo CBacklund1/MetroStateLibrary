@@ -9,7 +9,7 @@ Pao Teng Thao, Xiong Yang -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Contact Us</title>
     <style>
     .error {color: #FF0000;}
