@@ -6,6 +6,7 @@ $password = $_REQUEST['password'];
 setcookie("user", $username);
 setcookie("password", $password);
 
+
 $document_root = $_SERVER['DOCUMENT_ROOT'];
 ?>
   

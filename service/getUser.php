@@ -6,6 +6,7 @@ $password = "mysql";
 $dbname = "library";
 $count = 0;
 
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -29,6 +30,7 @@ if ($result->num_rows > 0) {
     echo "{";
     echo '"status" : "true"';
     echo "}";
+
     
 } else {
   echo "{";

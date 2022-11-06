@@ -1,5 +1,8 @@
+<!-- ICS 499-50 Fall 2022
+MetroState Library 
+Group 4 Authors: Crystal Backlund, Arun Markandu, 
+Pao Teng Thao, Xiong Yang -->
 <?php
-
 // User input Variables
 $FullName = $_REQUEST['fullname'];
 $Email = $_REQUEST['email'];
@@ -15,7 +18,7 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <!--Insert Page Name-->
         <title>Contact Us</title>
 </head>
@@ -42,7 +45,7 @@ echo $_POST['fullname'] . ' has submitted a question.<br />';
 	
 	<?php
 
-$outputstring = $date . "\t" . $fullname . " \t" . $email . " \t "
+$outputstring = $date . "\t" . $FullName . " \t" . $Email . " \t "
     . "\t" . $question . "\n";
 
 // open file for appending

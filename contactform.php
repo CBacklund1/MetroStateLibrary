@@ -8,7 +8,7 @@ Pao Teng Thao, Xiong Yang -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Contact Us</title>
   </head>
 
@@ -30,7 +30,7 @@ Pao Teng Thao, Xiong Yang -->
         <label for="email">Email:</label><br />
         <input type="text" name="email" placeholder="Email" /> <br />
         <label for="question">Ask Your Question:</label><br />
-        <textarea name="question" rows="5" cols="25"> </textarea><br /><br />
+        <textarea name="question" rows="5" cols="28"> </textarea><br /><br />
         <input type="submit" value="Submit" />
       </form>
     </div>
