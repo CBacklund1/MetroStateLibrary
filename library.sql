@@ -40,8 +40,13 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`book_id`, `name`, `author_name`, `course`, `number_of_copies`) VALUES
+(1, 'History of Civil War', 'Barn James', 'History', 7),
 (2, 'Calculus', 'Math Matt', 'Math', 0),
-(3, 'maths101', 'mathman', 'math', 10);
+(3, 'maths101', 'mathman', 'math', 10),
+(4, 'English 101', 'Jake Wellington', 'literature', 6);
+(5, 'Coding for newbies', 'Mary coral', 'ComputerScience', 8),
+(6, 'Chemistry guide', 'Conner Smore', 'Science', 2),
+(7, 'Study of Ethics', 'Karen Phillips', 'Philosophy', 10);
 
 -- --------------------------------------------------------
 
@@ -63,6 +68,13 @@ INSERT INTO `courses` (`course_id`, `course_name`, `course_book`) VALUES
 (1, 'science', 'science101'),
 (2, 'math', 'math101'),
 (3, 'computer', 'computer101');
+(4, 'History123', 'History of Civil War'),
+(5, 'literature456', 'English 101'),
+(6, 'ComputerScience789', 'Coding for newbies'),
+(7, 'Science002', 'Chemistry guide'),
+(8, 'Philosophy096', 'Study of Ethics');
+
+
 
 -- --------------------------------------------------------
 
@@ -133,7 +145,25 @@ INSERT INTO `users_books` (`users_books`, `user_id`, `book_id`, `return_date`) V
 (1, 3, 3, '2022-11-05 20:57:55');
 
 -- --------------------------------------------------------
+--table for storing feedbacks
+CREATE table `feedback` (
+	`feedback_id` int NOT NULL,
+	`email` varchar(255) NOT NULL COMMENT 'students email address',
+	`name` varchar(255) NOT NULL,
+	`feedback` varchar(255) NOT NULL COMMENT 'students feedback',
+	`date_sent` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--set primary key for feedback table
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`feedback_id`);
+
+ALTER TABLE `feedback`
+  MODIFY `feedback_id` int NOT NULL AUTO_INCREMENT COMMENT 'unique', AUTO_INCREMENT=1;
+
+--insert dummy data to feedback table
+INSERT INTO `feedback` ( email, name, feedback, date_sent) VALUES
+( 'arun2000markandU@gmail.com', 'arun', 'feedback test:Site can be improved', '2022-11-06');
 --
 -- Table structure for table `users_courses`
 --
