@@ -48,24 +48,7 @@ echo 'Please go to the counter to pickup your book.';
 
 <p id="checkoutmsg"></p>
 	
-	<?php
-
-$outputstring = $date . "\t" . $fullname . " \t" . $email . " \t "
-    . "\t" . $question . "\n";
-
-// open file for appending
-$myfile = fopen("questionForm.txt", 'ab') or die("Your request could not be processed at this time.");
-
-
-flock($myfile, LOCK_EX);
-fwrite($myfile, $outputstring, strlen($outputstring));
-flock($myfile, LOCK_UN);
-fclose($myfile);
-
-echo "<p>Request processed at ";
-echo date('H:i, jS F Y');
-echo "</p>";
-?>
+	
 	
 	
     </div>
