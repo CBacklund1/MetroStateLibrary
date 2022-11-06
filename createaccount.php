@@ -44,28 +44,29 @@ Pao Teng Thao, Xiong Yang -->
         
       </div>
       <div class="right_container">
-        <form action="insert.php" method="POST">
+        <form action="newaccount.php" method="POST">
           <h2>New Users</h2><br />
           <h4></h4><br />
-          <label for="full_name">Your Full Name:</label><br />
-          <input type="text" id="full_name" name="full_name" placeholder ="Full Name" /><br />
+          <label for="first_name">Your First Name:</label><br />
+          <input type="text" id="first_name" name="first_name" placeholder ="First Name" /><br />
+          <label for="last_name">Your Last Name:</label><br />
+          <input type="text" id="last_name" name="last_name" placeholder ="Last Name" /><br />
           <label for="email">Email Address:</label><br />
           <input type="text" id="email" name="email" placeholder = "Email"/><br />
           <label for="username">User Name:</label><br />
           <input type="text" id="username" name="username" placeholder ="User Name" /><br />
           <label for="password">Password:</label><br />
           <input type="password" id="password" name="password" placeholder ="Enter a Password" /><br />
-          <label for="phone_number">Phone Number:</label><br />
-          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /><br />
           <label for="address">Address:</label><br />
           <input type="text" id="address" name="address" placeholder ="Address" /><br />
           <input type="submit" value="Create Account" />
         </form>
-        <form action = "signin.php" method = "POST">
+        
+      </div>
+      <form action = "loginsubmit.php" method = "POST">
           <h2> Already have an account? Sign in below! </h2>
           <input type = "submit" value = "Sign in" />
-        </form>
-      </div>
+          </form>
     </div>
     <div class="banner">
 		<h1>Join the MetroState Library! <h1>
@@ -88,15 +89,18 @@ Pao Teng Thao, Xiong Yang -->
 		  
 		</div>
 </div>
-  </body>
-  <footer class = "signin_footer">
+</body>
+    <footer class = "signin_footer">
 		<h1></h1> <br>
 		<h4>Questions or any last reservations? Reach out to our Library Coordinator.</h4><br><br>
 		<form method="POST" action="contactform.php">
 			<input type = "submit" value = "Contact Us"/>
 		</form>
-  </footer>
-   <!--script for footer-->
-   <script
+    <!--script for footer-->
+    <script
     language="javascript" type="text/javascript" src="LibraryFooter.txt"></script>
+    
+  </footer>
+  
+   
 </html>
