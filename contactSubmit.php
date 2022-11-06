@@ -1,5 +1,8 @@
+<!-- ICS 499-50 Fall 2022
+MetroState Library 
+Group 4 Authors: Crystal Backlund, Arun Markandu, 
+Pao Teng Thao, Xiong Yang -->
 <?php
-
 // User input Variables
 $FullName = $_REQUEST['fullname'];
 $Email = $_REQUEST['email'];
@@ -42,7 +45,7 @@ echo $_POST['fullname'] . ' has submitted a question.<br />';
 	
 	<?php
 
-$outputstring = $date . "\t" . $fullname . " \t" . $email . " \t "
+$outputstring = $date . "\t" . $FullName . " \t" . $Email . " \t "
     . "\t" . $question . "\n";
 
 // open file for appending
