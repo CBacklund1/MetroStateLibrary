@@ -1,184 +1,273 @@
 function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
-    return "";
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
   }
+  return "";
+}
 
 function loadBookTable() {
-    var bookName = getCookie("bookname");
-    console.log("bookName: " + bookName);
+  var bookName = getCookie("bookname");
+  console.log("bookName: " + bookName);
 
-    var xhttp = new XMLHttpRequest(); //Ajax object to call service.
+  var xhttp = new XMLHttpRequest(); //Ajax object to call service.
 
-    var url = "http://localhost/groupproject/metrostatelibrary/service/getBooks.php";
-    url = url + "?bookname=" + bookName;
+  var url = "http://localhost/groupproject/metrostatelibrary/service/getBooks.php";
+  url = url + "?bookname=" + bookName;
 
-    xhttp.open("GET", url, true);
-    xhttp.send();
+  xhttp.open("GET", url, true);
+  xhttp.send();
 
-    xhttp.onreadystatechange=function() {
-      if (this.readyState == 4 && this.status == 200) {
-        myJSON = this.responseText;
-        console.log(myJSON);
-        
-          const myObj = JSON.parse(myJSON);
-          
-          
-  
-          text = "<table border='1'>"
-          text += "<tr> <th>id:</th> <th>book:</th> <th>author:</th> <th>course:</th> <th>number_of_copies:</th> </tr>";
-          for (x in myObj) {
-            text += "<tr>" +
-            "<td>" + myObj[x].id + "</td>" +
-            "<td>" + myObj[x].bookname + "</td>" +
-            "<td>" + myObj[x].authorname + "</td>" +
-            "<td>" + myObj[x].course + "</td>" +
-            "<td>" + myObj[x].number_of_copies + "</td>" + 
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myJSON = this.responseText;
+      console.log(myJSON);
+      
+      const myObj = JSON.parse(myJSON);
+
+      if(myObj.length != 0) {
+        text = "<table class='search-results-table' onclick='getSelectedBook()'>"
+        text += 
+          "<tr> "+
+          "   <th style='width:5%; text-align:center;'>Select</th> "+
+          "   <th>Book Id</th> "+
+          "   <th>Book Name</th> "+
+          "   <th>Author</th> "+
+          "   <th>Course</th> "+
+          "</tr> ";
+
+        for (x in myObj) {
+          text += 
+            "<tr>" +
+            "   <td><input type='checkbox'/></td>" + 
+            "   <td>" + myObj[x].id + "</td>" +
+            "   <td>" + myObj[x].bookname + "</td>" +
+            "   <td>" + myObj[x].authorname + "</td>" +
+            "   <td>" + myObj[x].course + "</td>" +
             "</tr>";
-          }
-          text += "</table>" 
-          console.log(text);
-          document.getElementById("booksTable").innerHTML = text;
-          
-      }
-    };
-    
-  }
-
-  function validateUser() {
-    
-
-    var user = getCookie("user");
-    var password = getCookie("password");
-    
-
-    console.log("cookie: " + document.cookie);
-    console.log("user:" + user);
-    console.log("password:" + password);
-
-    var xhttp = new XMLHttpRequest(); //Ajax object to call service.
-    var text = "Arun";
-    var url = "http://localhost/groupproject/metrostatelibrary/service/getUser.php";
-    url = url + "?user=" + user + "&" + "password=" + password;
-
-    xhttp.open("GET",url , true); 
-    xhttp.send();
-
-    xhttp.onreadystatechange=function() {
-      if (this.readyState == 4 && this.status == 200) {
-        myJSON = this.responseText;
-        console.log(myJSON);
+        }
         
-          const myObj = JSON.parse(myJSON);
-          console.log(myObj);
-          
-          if(myObj.status == "true"){
-            text = "welcome from validate user";
-            document.cookie = "loggedInId=1; path=/";
-            
-          }
-          else{
-            text = "Sorry we couldn't find you in our system";
-          }
-          document.getElementById("welcomemsg").innerHTML = text;
+        text += 
+          "</table>"+
+          "<div><form action='checkoutsubmit.php' method='POST'>"+
+          "   <input class='checkout-btn' type='submit' value='Check Out' />"+
+          "</form></div>";
       }
-    };
+      else {
+        text = "<h1>No Results Found</h1>";
+      }
+
+      document.getElementById("booksTable").innerHTML = text;  
+    }
+  };
+  
+}
+
+function validateUser() {
+  
+
+  var user = getCookie("user");
+  var password = getCookie("password");
+  
+
+  console.log("cookie: " + document.cookie);
+  console.log("user:" + user);
+  console.log("password:" + password);
+
+  var xhttp = new XMLHttpRequest(); //Ajax object to call service.
+  var text = "Arun";
+  var url = "http://localhost/groupproject/metrostatelibrary/service/getUser.php";
+  url = url + "?user=" + user + "&" + "password=" + password;
+
+  xhttp.open("GET",url , true); 
+  xhttp.send();
+
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myJSON = this.responseText;
+      console.log(myJSON);
+      
+        const myObj = JSON.parse(myJSON);
+        console.log(myObj);
+        
+        if(myObj.status == "true"){
+          text = "welcome from validate user";
+          document.cookie = "loggedInId=1; path=/";
+          
+        }
+        else{
+          text = "Sorry we couldn't find you in our system";
+        }
+        document.getElementById("welcomemsg").innerHTML = text;
+    }
+  };
 }
 
 function checkoutBook() {
-        var bookid = getCookie("bookid");
-        console.log("Book id: " + bookid);
+  const selectedBooks = getCookie("selectedBooks");
+  const checkedoutBooks = getCookie("checkedoutBooks");
+  var loggedInId = getCookie("loggedInId");
 
-        var loggedInId = getCookie("loggedInId");
-        console.log("Logged in id: " + loggedInId);
+  var xhttp = new XMLHttpRequest(); //Ajax object to call service.
+  var text = "Arun";
+  var tableCheckout = "";
 
-        var xhttp = new XMLHttpRequest(); //Ajax object to call service.
-        var text = "Arun";
+  var url = "";
+  const checkoutBooks = selectedBooks.split(",");
+  for(let i=0; i < checkoutBooks.length; i++) {
+    url = checkoutBooks[i];
+    console.log(url);
 
-        var url = "http://localhost/groupproject/metrostatelibrary/service/checkout.php";
-        url = url + "?bookid=" + bookid + "&" + "loggedInId=" + loggedInId;
-    
-        xhttp.open("GET", url, true); 
-        xhttp.send();
-    
-        xhttp.onreadystatechange=function() {
-          if (this.readyState == 4 && this.status == 200) {
-            myJSON = this.responseText;
-            console.log(myJSON);
+    xhttp.open("GET", url, true); 
+    xhttp.send();
+    console.log("send "+i);
+  }
+
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myJSON = this.responseText;
+      console.log(myJSON);
+      
+      const myObj = JSON.parse(myJSON);
+      console.log(myObj);
+      
+      const checkedout = checkedoutBooks.split(",");
+
+      if(myObj.status == "true"){
+          text = "<div class='checkout-header'>"+
+            "<i class='icon-check'></i>"+
+            "<h3 class='checkout-submission-header'>Successfully Checkout</h3>"+
+            "</div>"+
+            "<br><br><br>You have "+checkedout.length+" checked out book(s): ";
+            //+ "<br><br>Please go to the counter to pickup your book(s).";
+
+            tableCheckout = "<table class='checkout-results-table'>"
+            tableCheckout += 
+              "<tr> "+
+              "   <th>Please go to the counter to pickup your book(s) </th> "+
+              // "   <th>Book Id</th> "+
+              // "   <th>Book Name</th> "+
+              // "   <th>Author</th> "+
+              // "   <th>Course</th> "+
+              "</tr> ";
+
+              for (let i=0; i < checkedout.length; i++) {
+                tableCheckout += 
+                  "<tr>" +
+                  "   <td>" + checkedout[i] + "</td>" +
+                  "</tr>";
+              }
             
-              const myObj = JSON.parse(myJSON);
-              console.log(myObj);
-              
-              if(myObj.status == "true"){
-                text = "successfully checked out book";
-              }
-              else{
-                text = "Sorry we couldn't checkout your book, please contact help center";
-              }
-              document.getElementById("checkoutmsg").innerHTML = text;
-          }
-        };
+            tableCheckout += 
+              "</table>";
+      }
+      else{
+          text = "<div class='checkout-header'>"+
+          "<i class='icon-error'></i>"+
+          "<h3 class='checkout-submission-error-header'>Error Checking out</h3>"+
+          "</div>"+
+          "<br><br><br>"+
+          "Sorry we couldn't checkout your book(s). Please contact the help center.";
+      }
+      
+      document.getElementById("checkoutmsg").innerHTML = text;
+      document.getElementById("checkoutmsg").innerHTML += tableCheckout;
+    }
+  };
 
-  }
+}
 
-  function validateUserInput(){
-    text = document.getElementById("username").value;
-    
-    if(text == ""){
-      console.log("username required");
-      document.getElementById("usernameError").style = "display:inline";
-    }
-    else{
-        console.log("username entered");
-        document.getElementById("usernameError").style = "display:none";
-    }
+function validateUserInput(){
+  text = document.getElementById("username").value;
+  
+  if(text == ""){
+    console.log("username required");
+    document.getElementById("usernameError").style = "display:inline";
   }
+  else{
+      console.log("username entered");
+      document.getElementById("usernameError").style = "display:none";
+  }
+}
 
-  function validatePasswordInput(){
-    text = document.getElementById("password").value;
-    
-    if(text == ""){
-      console.log("password required");
-      document.getElementById("passwordError").style = "display:inline";
-    }
-    else{
-        console.log("password entered");
-        document.getElementById("passwordError").style = "display:none";
-    }
+function validatePasswordInput(){
+  text = document.getElementById("password").value;
+  
+  if(text == ""){
+    console.log("password required");
+    document.getElementById("passwordError").style = "display:inline";
   }
+  else{
+      console.log("password entered");
+      document.getElementById("passwordError").style = "display:none";
+  }
+}
 
-  function validateBookIdInput(){
-    text = document.getElementById("bookid").value;
-    
-    if(text == ""){
-      console.log("bookid required");
-      document.getElementById("bookIdError").style = "display:inline";
-    }
-    else{
-        console.log("bookid entered");
-        document.getElementById("bookIdError").style = "display:none";
-    }
+function validateBookIdInput(){
+  text = document.getElementById("bookid").value;
+  
+  if(text == ""){
+    console.log("bookid required");
+    document.getElementById("bookIdError").style = "display:inline";
   }
+  else{
+      console.log("bookid entered");
+      document.getElementById("bookIdError").style = "display:none";
+  }
+}
 
-  function validateSearchInput(){
-    text = document.getElementById("bookname").value;
-    
-    if(text == ""){
-      console.log("bookname required");
-      document.getElementById("bookNameError").style = "display:inline";
-    }
-    else{
-        console.log("bookname entered");
-        document.getElementById("bookNameError").style = "display:none";
-    }
+function validateSearchInput(){
+  text = document.getElementById("bookname").value;
+  
+  if(text == ""){
+    console.log("bookname required");
+    document.getElementById("bookNameError").style = "display:inline";
   }
+  else{
+      console.log("bookname entered");
+      document.getElementById("bookNameError").style = "display:none";
+  }
+}
+
+function getSelectedBook() {
+  const currentSelected = new Array();
+  const checkedoutBooks = new Array();
+  var row;
+  var loggedInId = "21";
+
+  $(".search-results-table input[type=checkbox]:checked").each(function() {
+    row = $(this).closest("tr")[0];
+    currentSelected.push("http://localhost/groupproject/metrostatelibrary/service/checkout.php"+
+      "?bookid=" + row.cells[1].innerHTML + "&" + "loggedInId=" + loggedInId);
+
+    checkedoutBooks.push("Book Id: "+row.cells[1].innerHTML
+      +"\nBook Name: "+row.cells[2].innerHTML
+      +"\nAuthor: "+row.cells[3].innerHTML
+      +"\nCourse Name: "+row.cells[4].innerHTML)
+  });
+
+  $(".checkout-btn").click(function() {
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'selectedBookLists';
+    input.value = currentSelected;
+    document.getElementById('searchResultForm').appendChild(input);
+
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'checkedoutBooks';
+    input.value = [checkedoutBooks];
+    document.getElementById('searchResultForm').appendChild(input);
+  });
+
+  
+  console.log(currentSelected);
+}

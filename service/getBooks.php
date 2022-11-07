@@ -1,5 +1,3 @@
-
-
 <?php
 
 /*
@@ -16,7 +14,6 @@ echo '[
     {"name":"Wulling Hall", "year": "1892"}
 ]';
 */
-
 
 $servername = "localhost";
 $username = "root";
@@ -36,27 +33,29 @@ $sql = "SELECT * FROM `books` WHERE name LIKE '%$bookname%'";
 /*$sql = "SELECT book_id, `name`, author_name, course, number_of_copies FROM books";*/
 $result = $conn->query($sql);
 
-
 if ($result->num_rows > 0) {
   // output data of each row
   $count = $result->num_rows;
   echo "[";
   while($row = $result->fetch_assoc()) {
     echo "{";
-    echo '"id": "' . $row["book_id"]. '" , "bookname": "' . $row["name"]. '" , "authorname": "' . $row["author_name"]. '" , "course": "' . $row["course"].'" , "number_of_copies": "' . $row["number_of_copies"]. '"';
-    echo "}";
-    if($count != 1){       
-        echo ",";
-        $count = $count - 1;
+      echo 
+    '"id": "' . $row["book_id"]. 
+    '" , "bookname": "' . $row["name"]. 
+    '" , "authorname": "' . $row["author_name"]. 
+    '" , "course": "' . $row["course"]. '"';
+    //'" , "number_of_copies": "' . $row["number_of_copies"]. '"';
+      echo "}";
+      if($count != 1){       
+          echo ",";
+          $count = $count - 1;
+      }
     }
-  }
-  echo "]";
+    echo "]";
 } else {
   echo "[]";
 }
 
-
 $conn->close();
-
 ?>
 

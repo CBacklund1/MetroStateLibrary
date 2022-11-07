@@ -21,19 +21,20 @@ $loggedInId = $_REQUEST['loggedInId'];
 $sql = "SELECT * FROM `books` WHERE book_id = '$bookid'";
 $result = $conn->query($sql);
 
-
+$currentDate = date('Y-m-d');
 if ($result->num_rows > 0) {
-    $insertSql = "INSERT INTO users_books(users_books, user_id, book_id, return_date) VALUES(1, '$loggedInId', '$bookid', '2022-11-26')";
+  if(($loggedInId != null || $loggedInId != "") 
+    && ($bookid != 0 || $bookid != "")) {
+    $insertSql = "
+      INSERT INTO users_books(user_id, book_id, return_date) 
+        VALUES('$loggedInId', '$bookid', '$currentDate')";
     $insertResult = $conn->query($insertSql);
-    
-  // output data of each row
- 
 
+  // output data of each row
     echo "{";
     echo '"status" : "true"';
-    //echo '"result" : '$insertResult'';
     echo "}";
-    
+    }
 } else {
   echo "{";
   echo '"status" : "false"';

@@ -10,36 +10,39 @@ Pao Teng Thao, Xiong Yang -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
     <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
-    <title>Contact Us</title>
+    <!--script for header-->
+    <script language="javascript" type="text/javascript" src="LibraryHeader.txt" ></script>
     <style>
-    .error {color: #FF0000;}
+      .error {color: #FF0000;}
     </style>
+    <!--Insert Page Name-->
+    <title>Search Books</title>
   </head>
 
-  <!--script for header-->
-  <script language="javascript" type="text/javascript" src="LibraryHeader.txt" ></script>
-  
-
-<br></br>
-<body>
+  <body>
     <!--Insert Page Heading-->
     <div class="heading">
+      <br/><br/>
       <h1>Search books</h1>
-  </div>
+    </div>
+    
+    <br></br>
+
     <div class="contact_container">
       <form action= "searchsubmit.php" method="POST">
-      <p><label for="bookname">Search for:</label></p>
-        <input id="bookname" name="bookname" rows="1" cols="50" oninput= 'validateSearchInput()'> </input>
-      <span class="error" id = "bookNameError">*Book name is required </span>
-<br>
-<input type="submit"  value="Submit">
-<br>
-<br>
+        <div class="search-section">
+          <label for="bookname">Book name:&nbsp;&nbsp;&nbsp;</label>
+          <input id="bookname" name="bookname" rows="1" cols="50" oninput='validateSearchInput()'></input>
+          <span class="error" id="bookNameError">*Book name is required </span>
+          &nbsp;&nbsp;&nbsp; 
+          <input type="submit"  value="Submit">
+        </div>
       </form>
     </div>
-   
   </body>
+  
+  <br><br><br>
   <!--script for footer-->
-  <script
-    language="javascript" type="text/javascript" src="LibraryFooter.txt"></script>
+  <script language="javascript" type="text/javascript" src="LibraryFooter.txt"></script>
+  <!--End Page-->
 </html>

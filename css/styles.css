@@ -185,3 +185,116 @@ th, td {
     border: 1px blue;
     text-align: center;
   }  
+
+  /** SearchForm CheckoutForm **/
+  #bookname {
+    padding: 0px 5px;
+  }
+  .search-section {
+    display: flex;
+    align-items: baseline;
+  }
+  .search-results-table {
+	  border-collapse: collapse;
+	  width: 100%;
+  }
+  #booksTable {
+	  display: flex;
+	  flex-direction: column;
+  }
+  th, td {
+	  text-align: left;
+	  padding: 8px;
+  }
+  tr:nth-child(even){
+	  background-color: #f2f2f2
+  }
+  th {
+	  background-color: #04AA6D;
+	  color: white;
+  }
+  .checkout-btn {
+	  display: flex;
+	  justify-content: center;
+	  margin-top: 20px;
+	  float: right;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    border-radius: 4px;
+  }
+  .checkout-btn:hover {
+    background-color: #4596dd;
+  }
+  .checkout-header {
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: nowrap;
+	  width: 100%;
+  }
+  .checkout-submission-header {
+	  color: green;
+	  padding-left: 5px;
+  }
+  .checkout-submission-error-header {
+    color: red;
+	  padding-left: 5px;
+  }
+  .icon-check {
+	  color: green;
+	  box-sizing: border-box;
+	  position: relative;
+	  display: block;
+	  transform: scale(var(--ggs,1));
+	  width: 22px;
+	  height: 22px;
+	  border: 2px solid;
+	  border-radius: 100px;
+  }
+  .icon-check::after {
+	  color: green;
+		content: "";
+		display: block;
+		box-sizing: border-box;
+		position: absolute;
+		left: 3px;
+		top: -1px;
+		width: 6px;
+		height: 10px;
+		border-color: currentColor;
+		border-width: 0 2px 2px 0;
+		border-style: solid;
+		transform-origin: bottom left;
+		transform: rotate(45deg);  
+  }
+  .icon-error {
+    color: red;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 40px
+  }
+  .icon-error::after, .icon-error::before {
+    content: " ";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 3px;
+    width: 2px;
+    background: currentColor;
+    left: 7px
+  }
+  .icon-error::after {
+    color: red;
+    top: 2px;
+    height: 8px
+  }
+  .icon-error::before {
+    color: red;
+    height: 2px;
+    bottom: 2px
+  }
