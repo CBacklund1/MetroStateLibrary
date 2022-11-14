@@ -41,14 +41,9 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
 echo 'You are logged in and welcome ' . $_POST['username'] .'<br />';
 echo ' <br />';
 
-
-
 ?> 
 
-    <p id="welcomemsg"></p>
-	
-	
-	
+    <p id="welcomemsg" class = "successMessage"></p>
 	
     </div>
 </body>

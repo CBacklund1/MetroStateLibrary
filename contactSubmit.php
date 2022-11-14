@@ -10,9 +10,6 @@ $question = $_POST['question'];
 $date = date('H:i, jS F Y');
 $document_root = $_SERVER['DOCUMENT_ROOT'];
 
-echo $fullName;
-echo $email;
-echo $question;
 setcookie("fullname", $fullName);
 setcookie("email", $email);
 setcookie("question", $question);
@@ -45,16 +42,14 @@ setcookie("date", $date);
     <br></br>
     <!--Insert Body of Page-->
     <div class="body" >
-        
-       <?php
+        <p class="successMessage">  
+        <?php
+            echo $_POST['fullname'] . " " . $_POST['email'] . " " . $_POST['question'] . '<br />';
+            echo $_POST['fullname'] . ' has submitted a question.<br /><br/>';
+        ?> 
+        </p>
 
-echo $_POST['fullname'] . " " . $_POST['email'] . " " . $_POST['question'] . '<br />';
-echo $_POST['fullname'] . ' has submitted a question.<br />';
-
-?> 
-	
-	<?php
-
+<?php
 $outputstring = $date . "\t" . $FullName . " \t" . $Email . " \t "
     . "\t" . $question . "\n";
 
@@ -75,7 +70,6 @@ echo "</p>";
 	
     </div>
 </body>
-<br></br>
 <!--script for footer-->
 <script language="javascript" type="text/javascript" src="LibraryFooter.txt"></script>
 <!--End Page-->

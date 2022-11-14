@@ -99,7 +99,7 @@ function validateUser() {
         console.log(myObj);
         
         if(myObj.status == "true"){
-          text = "welcome from validate user";
+          text = "welcome user: " + user;
           document.cookie = "loggedInId=1; path=/";
           
         }
