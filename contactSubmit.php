@@ -4,11 +4,20 @@ Group 4 Authors: Crystal Backlund, Arun Markandu,
 Pao Teng Thao, Xiong Yang -->
 <?php
 // User input Variables
-$FullName = $_REQUEST['fullname'];
-$Email = $_REQUEST['email'];
-$question = $_REQUEST['question'];
+$fullName = $_POST['fullname'];
+$email = $_POST['email'];
+$question = $_POST['question'];
 $date = date('H:i, jS F Y');
 $document_root = $_SERVER['DOCUMENT_ROOT'];
+
+echo $fullName;
+echo $email;
+echo $question;
+setcookie("fullname", $fullName);
+setcookie("email", $email);
+setcookie("question", $question);
+setcookie("date", $date);
+
 ?>
   
   <!DOCTYPE html>
@@ -19,11 +28,12 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <!--Insert Page Name-->
         <title>Contact Us</title>
 </head>
 
-<body>
+<body onload = "saveFeedback()">
     <!--script for header-->
     <script language="javascript" type="text/javascript" src="LibraryHeader.txt"></script>
     <!--Insert Page Heading-->

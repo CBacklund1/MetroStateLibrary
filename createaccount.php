@@ -63,7 +63,7 @@ Pao Teng Thao, Xiong Yang -->
         </form>
         
       </div>
-      <form action = "loginsubmit.php" method = "POST">
+      <form action = "loginform.php" method = "POST">
           <h2> Already have an account? Sign in below! </h2>
           <input type = "submit" value = "Sign in" />
           </form>

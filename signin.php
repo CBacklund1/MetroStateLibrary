@@ -5,6 +5,7 @@ Pao Teng Thao, Xiong Yang -->
 <?php
 session_start();
 
+/*
 if(isset($_SESSION['loggedin'])){
 	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
 }
@@ -13,6 +14,7 @@ if(!isset($_SESSION['loggedin'])){
   echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
 	//exit;
 }
+*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +43,7 @@ if(!isset($_SESSION['loggedin'])){
       <h1>Login</h1>
   </div>
     <div class="contact_container">
-      <form action= "authenticateUser.php" method="POST">
+      <form action= "loginsubmit.php" method="POST">
       <p><label for="username">Username:</label></p>
 <input id="username" name="username" rows="1" cols="50" > </input>
 

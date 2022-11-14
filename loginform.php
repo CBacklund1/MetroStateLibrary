@@ -38,7 +38,7 @@ Pao Teng Thao, Xiong Yang -->
 <span class="error" id = "usernameError">*Username is required </span>
 
 <p><label for="password">Password:</label></p>
-<input id="password" name="password" rows="1" cols="50" oninput= 'validatePasswordInput()'> </input>
+<input id="password" type = "password" name="password" rows="1" cols="50" oninput= 'validatePasswordInput()'> </input>
 <span class="error" id = "passwordError">*Password is required </span>
 
 

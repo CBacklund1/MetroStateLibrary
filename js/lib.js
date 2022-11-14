@@ -267,7 +267,95 @@ function getSelectedBook() {
     input.value = [checkedoutBooks];
     document.getElementById('searchResultForm').appendChild(input);
   });
-
-  
   console.log(currentSelected);
 }
+
+
+function saveFeedback(){
+  
+  console.log("saveFeedBack() Function called.");
+
+  var email = getCookie("email");
+  var name = getCookie("fullname");
+  var feedback = getCookie("question");
+  var date_sent = getCookie("date");
+  //var date_sent = new Date().toDateString();
+
+  //var email = "123@gmail.com";
+  //var name = "Arun";
+  //var feedback = "test";
+  var date_now = new Date();
+  var date_sent = date_now.getFullYear() + "-" + date_now.getMonth() + "-" + date_now.getDate();
+  
+
+    var xhttp = new XMLHttpRequest(); //Ajax object to call service.
+
+    var url = "http://localhost/groupproject/metrostatelibrary/service/feedback.php";
+    url = url + "?email=" + email + "&" + "name=" + name + "&" + "feedback=" + feedback + "&" + "date_sent=" + date_sent;
+    console.log(url);
+
+    xhttp.open("GET",url , true); 
+    xhttp.send();
+
+
+  }
+
+  function validateNameInput(){
+    text = document.getElementById("name").value;
+    
+    if(text == ""){
+      console.log("name required");
+      document.getElementById("nameError").style = "display:inline";
+    }
+    else{
+        console.log("name entered");
+        document.getElementById("nameError").style = "display:none";
+    }
+  }
+
+function validateEmail(emailId) {
+  var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (emailId.value.match(mailformat)) {
+    //document.form1.text1.focus();
+    return true;
+  }
+  else {
+    console.log("Invalid email address.");
+    //document.form1.text1.focus();
+    return false;
+  }
+}    
+
+  function validateEmailInput(){
+    text = document.getElementById("email").value;
+    
+    if(text == ""){
+      console.log("email required");
+      document.getElementById("emailError").style = "display:inline";
+      document.getElementById("emailFormatError").style = "display:none";
+    }
+    else{
+        console.log("email entered");
+        document.getElementById("emailError").style = "display:none";
+        var isValid = validateEmail(document.getElementById("email"));
+        if(isValid){
+          document.getElementById("emailFormatError").style = "display:none";
+        }
+        else{
+          document.getElementById("emailFormatError").style = "display:inline";
+        }
+    }
+  }
+
+  function validateFeedbackInput(){
+    text = document.getElementById("feedback").value;
+    
+    if(text == ""){
+      console.log("feedback required");
+      document.getElementById("feedbackError").style = "display:inline";
+    }
+    else{
+        console.log("feedback entered");
+        document.getElementById("feedbackError").style = "display:none";
+    }
+  }
