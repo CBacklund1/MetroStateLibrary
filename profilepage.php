@@ -75,7 +75,7 @@ Pao Teng Thao, Xiong Yang -->
           <input type="text" id="card_code" name="card_code" placeholder ="000" /><br />
 
           <label for="zip_code">Cardholder's Zip Code</label><br />
-          <input type="text" id="card_code" name="card_code" placeholder ="12345" /><br />
+          <input type="text" id="zip_code" name="zip_code" placeholder ="12345" /><br />
           <input type="submit" value="Pay My Fees!!" />
 
 
