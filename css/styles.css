@@ -304,3 +304,28 @@ th, td {
     font-size: 24px;
     padding: 15px;
   }
+
+  .button-primary {
+    background: #1c305c;
+    border-color: #1c305c;
+    color: #fff;
+}
+
+.button {
+  font-family: ff-meta-web-pro, sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  font-weight: bold;
+  vertical-align: middle;
+  white-space: normal;
+  border: 1px solid #888;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  display: inline-block;
+}

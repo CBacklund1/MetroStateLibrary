@@ -43,7 +43,7 @@ Pao Teng Thao, Xiong Yang -->
         <div class = "left_container">
           <img src="user.jpg" alt="user" width = "500"/>  
           <form method="POST" action="edituserinfo.php">
-               <input type = "submit" value = "Edit Your Profile"/>
+               <input type = "submit" class = "button button-primary" value = "Edit Your Profile"/>
           </form>
         </div>
 
@@ -94,7 +94,7 @@ Pao Teng Thao, Xiong Yang -->
           <span class="error" id="zip_code_error">*zip code is required </span>
           <br />
 
-          <input type="submit" value="Pay My Fees!!" />
+          <input type="submit" class = "button button-primary" value="Pay My Fees!!" />
 
 
 </form>
