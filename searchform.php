@@ -35,7 +35,7 @@ Pao Teng Thao, Xiong Yang -->
           <input id="bookname" name="bookname" rows="1" cols="50" oninput='validateSearchInput()'></input>
           <span class="error" id="bookNameError">*Book name is required </span>
           &nbsp;&nbsp;&nbsp; 
-          <input type="submit"  value="Submit">
+          <input type="submit" class = "button button-primary" value="Submit">
         </div>
       </form>
     </div>

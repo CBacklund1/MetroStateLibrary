@@ -58,7 +58,7 @@ Pao Teng Thao, Xiong Yang -->
 			<p> Create An account below </p>
 			<br></br>
 			<form method="POST" action="createaccount.php">
-				<input type="submit" value="Create Account" />
+				<input type="submit" class = "button button-primary" value="Create Account" />
 			</form>
 		</div>
 	
@@ -73,7 +73,7 @@ Pao Teng Thao, Xiong Yang -->
 		<h1>Join Today</h1> <br>
 		<h4>Questions or any last reservations? Reach out to us.</h4><br><br>
 		<form method="POST" action="contactform.php">
-			<input type = "submit" value = "Contact Us"/>
+			<input type = "submit" class = "button button-primary" value = "Contact Us"/>
 		</form>
 	<!--script for footer-->
 	<script language="javascript" type="text/javascript" 

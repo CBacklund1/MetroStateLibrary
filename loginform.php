@@ -43,7 +43,7 @@ Pao Teng Thao, Xiong Yang -->
 
 
 <br>
-<input type="submit" value="Submit" ">
+<input type="submit" class = "button button-primary" value="Submit" ">
 <br>
 <br>
       </form>

@@ -45,7 +45,7 @@ Pao Teng Thao, Xiong Yang -->
         <span class="error" id="feedbackError">*feedback is required </span>
         <br /><br />
 
-        <input type="submit" value="Submit" />
+        <input type="submit" class = "button button-primary" value="Submit" />
       </form>
     </div>
   </body>
