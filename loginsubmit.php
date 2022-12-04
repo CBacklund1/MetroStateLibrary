@@ -20,7 +20,7 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     <link rel="stylesheet" href="css/styles.css" />
     <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <!--Insert Page Name-->
-        <title>Contact Us</title>
+        <title>Log In</title>
 </head>
 
 <body onload = 'validateUser()'>
