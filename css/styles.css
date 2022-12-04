@@ -318,6 +318,46 @@ th {
   padding: 15px;
 }
 
+  .button-primary {
+    background: #1c305c;
+    border-color: #1c305c;
+    color: #fff;
+}
+
+.button {
+  font-family: ff-meta-web-pro, sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  font-weight: bold;
+  vertical-align: middle;
+  white-space: normal;
+  border: 1px solid #888;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  display: inline-block;
+}
+
+nav {
+  background: rgba(4, 26, 74, 0.9);
+  color: #FFF;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 42;
+  -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 33%);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 33%);
+}
+
+a:link {
+  color: white;
+}
 .footer_style {
 display: flex;
 justify-content: center;

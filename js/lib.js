@@ -374,6 +374,84 @@ function validateEmail(emailId) {
         document.getElementById("feedbackError").style = "display:none";
     }
   }
+
+  function validateUserIdInput(){
+    text = document.getElementById("user_id").value;
+    
+    if(text == ""){
+      console.log("User Id required");
+      document.getElementById("user_id_name_error").style = "display:inline";
+    }
+    else{
+        console.log("User Id name entered");
+        document.getElementById("user_id_name_error").style = "display:none";
+    }
+  }
+
+  function validateCardHolderNameInput(){
+    text = document.getElementById("cardholder_name").value;
+    
+    if(text == ""){
+      console.log("Card holder name required");
+      document.getElementById("cardholder_name_error").style = "display:inline";
+    }
+    else{
+        console.log("Card holder name entered");
+        document.getElementById("cardholder_name_error").style = "display:none";
+    }
+  }
+
+  function validateCardNumberInput(){
+    text = document.getElementById("card_number").value;
+    
+    if(text == ""){
+      console.log("Card number required");
+      document.getElementById("card_number_error").style = "display:inline";
+    }
+    else{
+        console.log("Card number entered");
+        document.getElementById("card_number_error").style = "display:none";
+    }
+  }
+
+  function validateExpDate(){
+    text = document.getElementById("exp_date").value;
+    
+    if(text == ""){
+      console.log("exp_date required");
+      document.getElementById("exp_date_error").style = "display:inline";
+    }
+    else{
+        console.log("exp_date entered");
+        document.getElementById("exp_date_error").style = "display:none";
+    }
+  }
+
+  function validateCardCode(){
+    text = document.getElementById("card_code").value;
+    
+    if(text == ""){
+      console.log("card_code required");
+      document.getElementById("card_code_error").style = "display:inline";
+    }
+    else{
+        console.log("card_code entered");
+        document.getElementById("card_code_error").style = "display:none";
+    }
+  }
+
+  function validateZipCode(){
+    text = document.getElementById("zip_code").value;
+    
+    if(text == ""){
+      console.log("zip_code required");
+      document.getElementById("zip_code_error").style = "display:inline";
+    }
+    else{
+        console.log("zip_code entered");
+        document.getElementById("zip_code_error").style = "display:none";
+    }
+  }
   
   
   

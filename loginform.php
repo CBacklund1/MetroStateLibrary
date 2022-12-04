@@ -10,7 +10,7 @@ Pao Teng Thao, Xiong Yang -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Contact Us</title>
+    <title>Log In</title>
     <style>
     .error {color: #FF0000;}
     </style>
@@ -43,7 +43,7 @@ Pao Teng Thao, Xiong Yang -->
 
 
 <br>
-<input type="submit" value="Submit" ">
+<input type="submit" class = "button button-primary" value="Submit" ">
 <br>
 <br>
       </form>

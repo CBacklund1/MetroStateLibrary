@@ -71,6 +71,11 @@ Pao Teng Thao, Xiong Yang -->
 				</form>
 				</div>
 			</div>
+			<p> Create An account below </p>
+			<br></br>
+			<form method="POST" action="createaccount.php">
+				<input type="submit" class = "button button-primary" value="Create Account" />
+			</form>
 		</div>
 
 		<div class= "rightContainer">
@@ -83,7 +88,7 @@ Pao Teng Thao, Xiong Yang -->
 		<h4>Questions or any last reservations? Reach out to us.</h4>
 		<br><br>
 		<form method="POST" action="contactform.php">
-			<input type = "submit" value = "Contact Us"/>
+			<input type = "submit" class = "button button-primary" value = "Contact Us"/>
 		</form>
 	</footer>
 

@@ -59,13 +59,13 @@ Pao Teng Thao, Xiong Yang -->
           <input type="password" id="password" name="password" placeholder ="Enter a Password" /><br />
           <label for="address">Address:</label><br />
           <input type="text" id="address" name="address" placeholder ="Address" /><br />
-          <input type="submit" value="Create Account" />
+          <input type="submit" class = "button button-primary" value="Create Account" />
         </form>
         
       </div>
       <form action = "loginform.php" method = "POST">
           <h2> Already have an account? Sign in below! </h2>
-          <input type = "submit" value = "Sign in" />
+          <input type = "submit" class = "button button-primary" value = "Sign in" />
           </form>
     </div>
     <div class="banner">
@@ -94,7 +94,7 @@ Pao Teng Thao, Xiong Yang -->
 		<h1></h1> <br>
 		<h4>Questions or any last reservations? Reach out to our Library Coordinator.</h4><br><br>
 		<form method="POST" action="contactform.php">
-			<input type = "submit" value = "Contact Us"/>
+			<input type = "submit" class = "button button-primary" value = "Contact Us"/>
 		</form>
     <!--script for footer-->
     <script
