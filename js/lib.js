@@ -380,11 +380,11 @@ function validateEmail(emailId) {
     
     if(text == ""){
       console.log("User Id required");
-      document.getElementById("user_id_name_error").style = "display:inline";
+      document.getElementById("user_id_error").style = "display:inline";
     }
     else{
         console.log("User Id name entered");
-        document.getElementById("user_id_name_error").style = "display:none";
+        document.getElementById("user_id_error").style = "display:none";
     }
   }
 
