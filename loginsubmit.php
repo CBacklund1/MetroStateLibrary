@@ -38,8 +38,8 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
         
        <?php
 
-echo 'You are logged in and welcome ' . $_POST['username'] .'<br />';
-echo ' <br />';
+/* echo 'You are logged in and welcome ' . $_POST['username'] .'<br />'; */
+/* echo 'Logged In Successfully. <br/><br/>'; */
 
 ?> 
 
@@ -47,7 +47,7 @@ echo ' <br />';
 	
     </div>
 </body>
-<br></br>
+
 <!--script for footer-->
 <script language="javascript" type="text/javascript" src="LibraryFooter.txt"></script>
 <!--End Page-->

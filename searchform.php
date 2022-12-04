@@ -32,7 +32,7 @@ Pao Teng Thao, Xiong Yang -->
       <form action= "searchsubmit.php" method="POST">
         <div class="search-section">
           <label for="bookname">Book name:&nbsp;&nbsp;&nbsp;</label>
-          <input id="bookname" name="bookname" rows="1" cols="50" oninput='validateSearchInput()'></input>
+          <input id="bookname" name="bookname" rows="1" cols="50" oninput='validateSearchInput()' placeholder="Book Name"></input>
           <span class="error" id="bookNameError">*Book name is required </span>
           &nbsp;&nbsp;&nbsp; 
           <input type="submit"  value="Submit">
@@ -41,7 +41,6 @@ Pao Teng Thao, Xiong Yang -->
     </div>
   </body>
   
-  <br><br><br>
   <!--script for footer-->
   <script language="javascript" type="text/javascript" src="LibraryFooter.txt"></script>
   <!--End Page-->

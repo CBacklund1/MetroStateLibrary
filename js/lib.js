@@ -34,7 +34,7 @@ function loadBookTable() {
       const myObj = JSON.parse(myJSON);
 
       if(myObj.length != 0) {
-        text = "<table class='search-results-table' onclick='getSelectedBook()'>"
+        text = "<table id='search-results-table-id' class='search-results-table' onclick='getSelectedBook();getSelectedBookToDelete();'>"
         text += 
           "<tr> "+
           "   <th style='width:5%; text-align:center;'>Select</th> "+
@@ -58,7 +58,7 @@ function loadBookTable() {
         text += 
           "</table>"+
           "<div><form action='checkoutsubmit.php' method='POST'>"+
-          "   <input class='checkout-btn' type='submit' value='Check Out' />"+
+          "   <input id='checkoutId' class='checkout-btn' type='submit' value='Check Out' />"+
           "</form></div>";
       }
       else {
@@ -99,14 +99,26 @@ function validateUser() {
         console.log(myObj);
         
         if(myObj.status == "true"){
-          text = "welcome user: " + user;
+          text = "<div class='successLoggedInMsg'><p>Logged in Successfully!</p><br><p>Welcome " + user +"!</p></div>";
           document.cookie = "loggedInId=1; path=/";
-          
+		  
+		  if(user == 'admin'){
+			  var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+			  document.getElementById("navbar-section").innerHTML += admin;
+		  }
+		  
+		  var logout = "Logout";
+		  document.getElementById("signinId").value = logout;
+		  
+		  var welcomeUser = "Welcome "+user+"!";
+		  document.getElementById("login-icon").innerHTML += welcomeUser;
         }
         else{
-          text = "Sorry we couldn't find you in our system";
+          text = "<div class='failedLoggedInMsg'><p>Sorry we couldn't find you in our system.</p></div>";
         }
-        document.getElementById("welcomemsg").innerHTML = text;
+		
+		document.getElementById("welcomemsg").innerHTML = text;
+		
     }
   };
 }
@@ -118,6 +130,7 @@ function checkoutBook() {
 
   var xhttp = new XMLHttpRequest(); //Ajax object to call service.
   var text = "Arun";
+  var text2 = "<h1 style='text-align: center; margin-top:20px;'>Please remember to return the book(s) within 90 days. Otherwise a late fee of $5 will be charged.</h1>";
   var tableCheckout = "";
 
   var url = "";
@@ -146,7 +159,8 @@ function checkoutBook() {
             "<i class='icon-check'></i>"+
             "<h3 class='checkout-submission-header'>Successfully Checkout</h3>"+
             "</div>"+
-            "<br><br><br>You have "+checkedout.length+" checked out book(s): ";
+            "<br><br><br>"+
+			"<h3>You have "+checkedout.length+" checked out book(s): </h3>";
             //+ "<br><br>Please go to the counter to pickup your book(s).";
 
             tableCheckout = "<table class='checkout-results-table'>"
@@ -180,6 +194,7 @@ function checkoutBook() {
       
       document.getElementById("checkoutmsg").innerHTML = text;
       document.getElementById("checkoutmsg").innerHTML += tableCheckout;
+	  document.getElementById("checkoutmsg").innerHTML += text2;
     }
   };
 
@@ -358,4 +373,79 @@ function validateEmail(emailId) {
         console.log("feedback entered");
         document.getElementById("feedbackError").style = "display:none";
     }
+  }
+  
+  
+  
+  function adminManage() {
+	  var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+	  document.getElementById("navbar-section").innerHTML += admin;
+	  
+	  var logout = "Logout";
+	  document.getElementById("signinId").value = logout;
+	  
+	  var welcomeUser = "Welcome Admin!";
+	  document.getElementById("login-icon").innerHTML += welcomeUser;
+	  
+	  loadBookTable();
+	  
+  }
+  
+  function adminManageAdd() {
+	  var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+	  document.getElementById("navbar-section").innerHTML += admin;
+	  
+	  var logout = "Logout";
+	  document.getElementById("signinId").value = logout;
+	  
+	  var welcomeUser = "Welcome Admin!";
+	  document.getElementById("login-icon").innerHTML += welcomeUser;
+	  
+	  loadBookTable();
+  }
+  
+  function getSelectedBookToDelete() {
+  const selected = new Array();
+
+  $(".search-results-table input[type=checkbox]:checked").each(function() {
+    var currentRow = $(this).closest("tr")[0];
+	
+    selected.push("http://localhost/groupproject/metrostatelibrary/service/deleteBook.php"+
+      "?bookid=" + currentRow.cells[1].innerHTML);
+  });
+
+	$("#admin-delete-btn").click(function() {
+	var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'selectedBookIdLists';
+    input.value = [selected];
+    document.getElementById('deleteSubmitForm').appendChild(input);
+  });
+}
+  
+  function adminManageDelete() {
+	var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+	document.getElementById("navbar-section").innerHTML += admin;
+
+	var logout = "Logout";
+	document.getElementById("signinId").value = logout;
+
+	var welcomeUser = "Welcome Admin!";
+	document.getElementById("login-icon").innerHTML += welcomeUser;
+
+	const selectedBookIdLists = getCookie("selectedBookIdLists");
+	var xhttp = new XMLHttpRequest(); //Ajax object to call service.
+
+	const books = selectedBookIdLists.split(",");
+
+	var url = "";
+	for (let i = 0; i < books.length; i++) {
+		console.log("i: "+books[i]);
+		
+		url = books[i];
+		xhttp.open("GET", url, true);
+		xhttp.send();
+	}
+
+	loadBookTable();
   }

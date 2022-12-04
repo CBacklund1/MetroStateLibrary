@@ -15,37 +15,37 @@ Pao Teng Thao, Xiong Yang -->
     <link rel="stylesheet" href="css/styles.css" />
     <title>MetroState Library Home Page</title>
   </head>
+
   <body>
     <!--script for header-->
     <script language="javascript" type="text/javascript" src="LibraryHeader.txt"></script>
 
-
     <div class="banner">
 		<h1>Join the MetroState Library! <h1>
-	  </div>
-	  <br></br>
-	  <div class = "mission">
-	  <div class = "mission1">
+	</div>
+	
+	<br></br>
+	
+	<div class = "mission">	
+		<div class = "mission1">
 		  <h1> Saves Money</h1> 
 		  <h4>Borrow the books you need for FREE</h4>
+		</div>
 		
-	  </div>
-	  <div class = "mission2">
+		<div class = "mission2">
 		  <h1>Saves Time</h1>
 		  <h4>This is your one-stop-shop for books.</h4>
-		
 		</div>
-	  <div class = "mission3">
+			
+		<div class = "mission3">
 		  <h1>Saves Books</h1>
 		  <h4>Recycle books by borrowing and returning them, as often as you'd like.</h4>
-		  
-		</div>
+		</div>		
+	</div>
 
-		
-</div>
-<br></br>
+	<br></br>
     <!--Insert Body of Page-->
-      <div class = "container">
+	<div class = "container">
 		<div class= "leftContainer">
 			<h2>Refer a Friend Today!</h2>
 			<br></br>
@@ -55,28 +55,40 @@ Pao Teng Thao, Xiong Yang -->
 			<p>Individuals can choose their desired books, the library will stock and maintain inventory, and individuals can choose which option (rent/buy) that best fits their needs. </p>
 
 			<br></br>
-			<p> Create An account below </p>
-			<br></br>
-			<form method="POST" action="createaccount.php">
-				<input type="submit" value="Create Account" />
-			</form>
+			
+			<div class="user_account_style">
+				<div>
+					<form method="POST" action="createaccount.php">
+						<h4>Become a member today!</h4>
+						<input type="submit" value="Create Account" />
+					</form>
+				</div>
+				
+				<div>
+				<form action = "loginform.php" method = "POST">
+					<h4> Already have an account?</h4>
+					<input type = "submit" value = "Sign in" />
+				</form>
+				</div>
+			</div>
 		</div>
-	
-	
+
 		<div class= "rightContainer">
-			 <img src="librarybooks.jpg" alt="books" width="500px" />
+			<img src="librarybooks.jpg" alt="books" width="500px" />
 		</div>
 	</div>
-	<br></br>
-        </body>
+
 	<footer class = "signin_footer">
-		<h1>Join Today</h1> <br>
-		<h4>Questions or any last reservations? Reach out to us.</h4><br><br>
+		<h1>Join Today</h1>
+		<h4>Questions or any last reservations? Reach out to us.</h4>
+		<br><br>
 		<form method="POST" action="contactform.php">
 			<input type = "submit" value = "Contact Us"/>
 		</form>
+	</footer>
+
 	<!--script for footer-->
-	<script language="javascript" type="text/javascript" 
-  src="LibraryFooter.txt"></script>
-	</body>
-	</html>
+	<script language="javascript" type="text/javascript" src="LibraryFooter.txt"></script>
+
+  </body>
+</html>
