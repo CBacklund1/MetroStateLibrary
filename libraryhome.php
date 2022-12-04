@@ -57,19 +57,6 @@ Pao Teng Thao, Xiong Yang -->
 			<br></br>
 			
 			<div class="user_account_style">
-				<div>
-					<form method="POST" action="createaccount.php">
-						<h4>Become a member today!</h4>
-						<input type="submit" value="Create Account" />
-					</form>
-				</div>
-				
-				<div>
-				<form action = "loginform.php" method = "POST">
-					<h4> Already have an account?</h4>
-					<input type = "submit" value = "Sign in" />
-				</form>
-				</div>
 			</div>
 			<p> Create An account below </p>
 			<br></br>
