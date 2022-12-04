@@ -329,3 +329,19 @@ th, td {
   overflow: hidden;
   display: inline-block;
 }
+
+nav {
+  background: rgba(4, 26, 74, 0.9);
+  color: #FFF;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 42;
+  -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 33%);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 33%);
+}
+
+a:link {
+  color: white;
+}
