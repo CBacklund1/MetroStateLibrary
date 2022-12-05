@@ -19,7 +19,7 @@ Pao Teng Thao, Xiong Yang -->
     <title>Search Books</title>
   </head>
 
-  <body>
+  <body onload = "init()">
     <!--Insert Page Heading-->
     <div class="heading">
       <br/><br/>

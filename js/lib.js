@@ -102,9 +102,10 @@ function validateUser() {
           text = "<div class='successLoggedInMsg'><p>Logged in Successfully!</p><br><p>Welcome " + user +"!</p></div>";
           document.cookie = "loggedInId=1; path=/";
 		  
-		  if(user == 'admin'){
-			  var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
-			  document.getElementById("navbar-section").innerHTML += admin;
+		  if(user == 'admin' || user == 'ADMIN'){
+			  //var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+			  //document.getElementById("navbar-section").innerHTML += admin;
+        document.getElementById("manage_book").style = "display:inline"
 		  }
 		  
 		  var logout = "Logout";
@@ -526,4 +527,47 @@ function validateEmail(emailId) {
 	}
 
 	loadBookTable();
+  }
+
+  function init() {
+    //initialize the menu bar
+    var user = getCookie("user"); 
+    if(user == 'admin' || user == 'ADMIN'){
+      document.getElementById("manage_book").style = "display:inline"
+    }
+    else {
+      document.getElementById("manage_book").style = "display:none"
+    }
+  
+    //set the sign in sign out button
+    var loggedInId = getCookie("loggedInId");
+    if(loggedInId != '""'){
+      //set welcome user
+      var logout = "Logout";
+		  document.getElementById("signinId").value = logout;
+		  
+		  var welcomeUser = "Welcome "+user+"!";
+		  document.getElementById("login-icon").innerHTML += welcomeUser;
+    }
+    else{
+      //show sign in button
+      var signIn = "Signin";
+		  document.getElementById("signinId").value = signIn;
+		  
+		  var welcomeUser = "";
+		  document.getElementById("login-icon").innerHTML += welcomeUser;
+    }
+  } 
+
+  function signOutUser(){
+    document.cookie = 'loggedInId= ""; path=/';
+    document.cookie = 'user= ""';
+    document.cookie = 'password= ""';
+
+    var signIn = "Signin";
+		document.getElementById("signinId").value = signIn;
+		  
+		var welcomeUser = "";
+		document.getElementById("login-icon").innerHTML = welcomeUser;
+    document.getElementById("welcomemsg").innerHTML = welcomeUser;
   }

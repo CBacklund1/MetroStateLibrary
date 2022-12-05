@@ -26,7 +26,7 @@ Pao Teng Thao, Xiong Yang -->
   $nameErr = "Username is required";
   $passErr = "Password is required";
 ?>
-<body>
+<body onload = "signOutUser()">
     <!--Insert Page Heading-->
     <div class="heading">
       <h1>Login</h1>

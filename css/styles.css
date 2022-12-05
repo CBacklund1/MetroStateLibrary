@@ -475,6 +475,10 @@ justify-content: center;
   padding: 30px;
 }
 
+.manage_book {
+  display: none;
+}
+
 
 
 

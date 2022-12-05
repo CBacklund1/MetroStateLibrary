@@ -13,10 +13,11 @@ Pao Teng Thao, Xiong Yang -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+	<script language="javascript" type="text/javascript" src="js/lib.js" ></script>
     <title>MetroState Library Home Page</title>
   </head>
 
-  <body>
+  <body onload = "init()">
     <!--script for header-->
     <script language="javascript" type="text/javascript" src="LibraryHeader.txt"></script>
 

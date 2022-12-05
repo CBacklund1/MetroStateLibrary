@@ -22,7 +22,7 @@ Pao Teng Thao, Xiong Yang -->
 
 
 <br></br>
-<body>
+<body onload = "init()">
     <!--Insert Page Heading-->
     <div class="heading">
       <h1>Contact Us</h1>

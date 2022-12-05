@@ -28,7 +28,7 @@ Pao Teng Thao, Xiong Yang -->
     <script language="javascript" type="text/javascript" src="LibraryHeader.txt"></script>
     
     <br></br>
-  <body onload = 'validateUser()'>
+  <body onload = "init()">
 	<div class="heading">
 		<h1>Welcome back!</h1>
 		<br>
