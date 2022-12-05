@@ -68,7 +68,7 @@ function loadBookTable() {
       document.getElementById("booksTable").innerHTML = text;  
     }
   };
-  
+  init();
 }
 
 function validateUser() {
@@ -198,7 +198,7 @@ function checkoutBook() {
 	  document.getElementById("checkoutmsg").innerHTML += text2;
     }
   };
-
+  init();
 }
 
 function validateUserInput(){
@@ -313,7 +313,7 @@ function saveFeedback(){
     xhttp.open("GET",url , true); 
     xhttp.send();
 
-
+    init();
   }
 
   function validateNameInput(){
@@ -457,28 +457,28 @@ function validateEmail(emailId) {
   
   
   function adminManage() {
-	  var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
-	  document.getElementById("navbar-section").innerHTML += admin;
+	  //var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+	  //document.getElementById("navbar-section").innerHTML += admin;
 	  
-	  var logout = "Logout";
-	  document.getElementById("signinId").value = logout;
+	  //var logout = "Logout";
+	  //document.getElementById("signinId").value = logout;
 	  
-	  var welcomeUser = "Welcome Admin!";
-	  document.getElementById("login-icon").innerHTML += welcomeUser;
+	  //var welcomeUser = "Welcome Admin!";
+	  //document.getElementById("login-icon").innerHTML += welcomeUser;
 	  
 	  loadBookTable();
 	  
   }
   
   function adminManageAdd() {
-	  var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
-	  document.getElementById("navbar-section").innerHTML += admin;
+	  //var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+	  //document.getElementById("navbar-section").innerHTML += admin;
 	  
-	  var logout = "Logout";
-	  document.getElementById("signinId").value = logout;
+	  //var logout = "Logout";
+	  //document.getElementById("signinId").value = logout;
 	  
-	  var welcomeUser = "Welcome Admin!";
-	  document.getElementById("login-icon").innerHTML += welcomeUser;
+	  //var welcomeUser = "Welcome Admin!";
+	  //document.getElementById("login-icon").innerHTML += welcomeUser;
 	  
 	  loadBookTable();
   }
@@ -503,14 +503,14 @@ function validateEmail(emailId) {
 }
   
   function adminManageDelete() {
-	var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
-	document.getElementById("navbar-section").innerHTML += admin;
+	//var admin = "<li class='nav'><a href='admin.php'>Manage Book(s)</a></li>";		  
+	//document.getElementById("navbar-section").innerHTML += admin;
 
-	var logout = "Logout";
-	document.getElementById("signinId").value = logout;
+	//var logout = "Logout";
+	//document.getElementById("signinId").value = logout;
 
-	var welcomeUser = "Welcome Admin!";
-	document.getElementById("login-icon").innerHTML += welcomeUser;
+	//var welcomeUser = "Welcome Admin!";
+	//document.getElementById("login-icon").innerHTML += welcomeUser;
 
 	const selectedBookIdLists = getCookie("selectedBookIdLists");
 	var xhttp = new XMLHttpRequest(); //Ajax object to call service.
@@ -569,5 +569,5 @@ function validateEmail(emailId) {
 		  
 		var welcomeUser = "";
 		document.getElementById("login-icon").innerHTML = welcomeUser;
-    document.getElementById("welcomemsg").innerHTML = welcomeUser;
+    //document.getElementById("welcomemsg").innerHTML = welcomeUser;
   }
